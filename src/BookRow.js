@@ -3,13 +3,13 @@ import React, { Component } from "react";
 class BookRow extends Component {
   render() {
     const book = this.props.book;
-    const author = this.props.author;
+    const bookAuthors = book.authors;
+    console.log(book.authors);
+    const authorList = bookAuthors.map(author => <p>{author.name}</p>);
     return (
       <tr>
         <td>{book.title}</td>
-        <td>
-          {author.first_name} {author.last_name}
-        </td>
+        <td>{authorList}</td>
         <td>
           <button className="btn" style={{ backgroundColor: book.color }} />
         </td>
